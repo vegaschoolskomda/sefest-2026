@@ -7,6 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Check theme immediately to prevent FOUC
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
     @yield('extra-css')
 </head>
 <body>
@@ -88,6 +96,8 @@
             </header>
 
             @yield('content')
+            
+            @include('partials.footer')
         </main>
     </div>
 
