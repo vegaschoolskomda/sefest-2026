@@ -1,0 +1,224 @@
+:root {
+    --auth-bg: #f8fafc;
+    --auth-primary: #3b82f6;
+    --auth-text: #1e293b;
+    --auth-zinc-300: #d1d5db;
+    --auth-zinc-800: #27272a;
+}
+
+.auth-page {
+    display: flex;
+    min-height: 100vh;
+    background: var(--auth-bg);
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Split Layout */
+.auth-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    overflow: hidden;
+}
+
+.auth-visual-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    mix-blend-mode: luminosity;
+    z-index: 0;
+}
+
+.visual-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.8), transparent, rgba(0,0,0,0.8));
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .auth-visual { display: none; }
+}
+
+.auth-form-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background: white;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+    z-index: 10;
+}
+
+/* Input Hover Effect */
+.input-wrapper {
+    position: relative;
+    padding: 2px;
+    border-radius: 8px;
+    background: transparent;
+    transition: background 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.input-wrapper.active {
+    background: radial-gradient(100px circle at var(--x) var(--y), var(--auth-primary), transparent 80%);
+}
+
+.input-field {
+    width: 100%;
+    height: 44px;
+    padding: 0 16px;
+    border-radius: 6px;
+    border: 1px solid var(--auth-zinc-300);
+    background: white;
+    outline: none;
+    font-size: 14px;
+    transition: box-shadow 0.2s;
+}
+
+.input-field:focus {
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Ripple Animation */
+.ripple-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.ripple-circle {
+    position: absolute;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 50%;
+    animation: ripple 8s infinite ease-out;
+    opacity: 0;
+}
+
+@keyframes ripple {
+    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+    50% { opacity: 0.3; }
+    100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
+
+.ripple-container div {
+    top: 50%;
+    left: 50%;
+}
+.orbit-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orbit-path {
+    position: absolute;
+    border: 1px dashed rgba(255,255,255,0.2);
+    border-radius: 50%;
+}
+
+.orbiting-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    animation: orbit var(--duration) infinite linear;
+    offset-path: circle(var(--radius));
+}
+
+@keyframes orbit {
+    from { offset-distance: 0%; }
+    to { offset-distance: 100%; }
+}
+
+/* Box Reveal */
+.box-reveal {
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.box-reveal-overlay {
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: var(--auth-primary);
+    transform: translateX(-100%);
+    z-index: 2;
+}
+
+.box-reveal-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease 0.2s;
+}
+
+.box-reveal.active .box-reveal-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.box-reveal.active .box-reveal-overlay {
+    animation: slideBox 0.6s ease-in-out forwards;
+}
+
+@keyframes slideBox {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(0); }
+    100% { transform: translateX(101%); }
+}
+
+/* Buttons */
+.btn-auth {
+    width: 100%;
+    height: 44px;
+    background: var(--auth-primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-google {
+    width: 100%;
+    height: 44px;
+    background: white;
+    border: 1px solid var(--auth-zinc-300);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
