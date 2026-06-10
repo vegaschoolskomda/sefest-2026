@@ -1,10 +1,10 @@
-# Ojo Nganggur
+# SIJA (Simulasi Kerja)
 
 Platform simulasi karier dan eksplorasi pekerjaan berbasis AI untuk membantu pengguna menemukan jalur karier terbaik melalui simulasi interaktif, roadmap, mentor, dan portofolio digital.
 
 ## Tentang Project
 
-**Ojo Nganggur** adalah website yang dirancang untuk membantu pengguna:
+**SIJA** adalah website yang dirancang untuk membantu pengguna:
 - Mengenali minat dan kemampuan secara mendalam.
 - Mendapatkan rekomendasi karier berbasis analisis AI.
 - Mencoba simulasi pekerjaan nyata sebelum terjun ke industri.

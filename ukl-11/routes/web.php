@@ -59,6 +59,11 @@ Route::get('/dashboard/mentor-ai', function () {
     return view('dashboard.mentor-ai');
 })->name('dashboard.mentor-ai');
 
+Route::get('/dashboard/bimbingan-mentor', function () {
+    return view('dashboard.bimbingan-mentor');
+})->name('dashboard.bimbingan-mentor');
+
+
 Route::get('/dashboard/roadmap-karier', function () {
     return view('dashboard.roadmap-karier');
 })->name('dashboard.roadmap-karier');

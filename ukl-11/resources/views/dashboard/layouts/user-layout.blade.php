@@ -1,10 +1,10 @@
-<!doctype html>
+z<!doctype html>
 <html lang="id">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@yield('title', 'SIJA') | SIJA</title>
-    @vite(['resources/css/style.css', 'resources/js/app.js', 'resources/js/dashboard.js'])
+@vite(['resources/css/style.css', 'resources/css/roadmap-karier.css', 'resources/js/app.js', 'resources/js/dashboard.js'])
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
 

@@ -1,0 +1,166 @@
+/* Roadmap Karier Saya - front-end only */
+:root{
+  --sija-blue:#2563EB;
+  --sija-radius:16px;
+}
+
+.sija-roadmap-section{margin-top:18px;}
+
+/* HERO */
+.sija-roadmap-hero{padding:22px;}
+.sija-roadmap-hero-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;}
+.sija-roadmap-hero-meta{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.sija-roadmap-meta-item{border:1px solid rgba(15,23,42,0.10);border-radius:16px;padding:12px;background:#fff;display:flex;gap:12px;align-items:flex-start;}
+.sija-roadmap-meta-icon{width:18px;height:18px;color:var(--sija-blue);}
+.sija-roadmap-meta-label{font-weight:850;color:#6B7280;font-size:12px;}
+.sija-roadmap-meta-value{margin-top:6px;font-weight:1000;color:#0F172A;font-size:14px;line-height:1.3;}
+
+.sija-roadmap-hero-cta{min-width:340px;}
+.sija-roadmap-hero-meter{border:1px solid rgba(15,23,42,0.10);border-radius:16px;background:#fff;padding:16px;}
+.sija-roadmap-hero-meter-top{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.sija-roadmap-hero-meter-title{font-weight:950;color:#0F172A;font-size:13px;}
+.sija-roadmap-hero-meter-value{font-weight:1000;color:var(--sija-blue);font-size:18px;}
+.sija-roadmap-meterbar{height:10px;background:rgba(37,99,235,0.10);border-radius:999px;overflow:hidden;margin-top:10px;}
+.sija-roadmap-meterbar-fill{height:100%;background:var(--sija-blue);border-radius:999px;}
+
+.sija-roadmap-hero-actions{display:flex;flex-direction:column;gap:10px;margin-top:12px;}
+
+/* RECO CARD */
+.sija-roadmap-reco-card{padding:18px 18px;}
+.sija-roadmap-reco-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;}
+.sija-roadmap-reco-profesi{font-weight:1000;color:#0F172A;font-size:18px;}
+.sija-roadmap-reco-sub{margin-top:8px;color:#6B7280;font-weight:800;font-size:13px;line-height:1.6;}
+.sija-roadmap-reco-badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end;}
+.sija-roadmap-reco-badge{border:1px solid rgba(37,99,235,0.18);background:rgba(37,99,235,0.06);border-radius:16px;padding:10px 12px;min-width:180px;}
+.sija-roadmap-reco-badge-label{color:#6B7280;font-weight:850;font-size:12px;}
+.sija-roadmap-reco-badge-value{margin-top:6px;color:var(--sija-blue);font-weight:1000;font-size:14px;line-height:1.3;}
+
+.sija-roadmap-reco-bottom{margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.sija-roadmap-reco-note{display:flex;align-items:flex-start;gap:10px;color:#6B7280;font-weight:800;font-size:13px;line-height:1.6;}
+.sija-roadmap-reco-note-icon{width:18px;height:18px;color:var(--sija-blue);}
+
+/* Layout */
+.sija-roadmap-two-col{display:grid;grid-template-columns:1.05fr 0.95fr;gap:16px;margin-top:18px;align-items:start;}
+.sija-roadmap-card{padding:18px;}
+.sija-roadmap-card-head{margin-bottom:12px;}
+.sija-roadmap-card-stack{display:flex;flex-direction:column;gap:14px;}
+
+/* Timeline */
+.sija-roadmap-timeline{list-style:none;padding:0;margin:8px 0 0 0;display:flex;flex-direction:column;gap:12px;}
+.sija-roadmap-timeline-item{display:flex;gap:12px;align-items:flex-start;border:1px solid rgba(15,23,42,0.10);border-radius:16px;background:#fff;padding:12px;}
+.sija-roadmap-timeline-bullet{width:38px;height:38px;border-radius:14px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(37,99,235,0.18);background:rgba(37,99,235,0.08);}
+.sija-roadmap-timeline-icon{width:18px;height:18px;color:var(--sija-blue);}
+
+.sija-roadmap-timeline-item.is-done .sija-roadmap-timeline-bullet{background:rgba(37,99,235,0.10);border-color:rgba(37,99,235,0.22);}
+.sija-roadmap-timeline-item.is-current .sija-roadmap-timeline-bullet{background:rgba(37,99,235,0.12);border-color:rgba(37,99,235,0.30);}
+.sija-roadmap-timeline-item.is-pending .sija-roadmap-timeline-bullet{background:rgba(245,158,11,0.10);border-color:rgba(245,158,11,0.25);}
+.sija-roadmap-timeline-item.is-pending .sija-roadmap-timeline-icon{color:#B45309;}
+.sija-roadmap-timeline-item.is-locked .sija-roadmap-timeline-bullet{background:rgba(15,23,42,0.04);border-color:rgba(15,23,42,0.12);}
+.sija-roadmap-timeline-item.is-locked .sija-roadmap-timeline-icon{color:#111827;opacity:0.7;}
+
+.sija-roadmap-timeline-title{font-weight:1000;color:#0F172A;font-size:14px;}
+.sija-roadmap-timeline-status{margin-top:6px;font-weight:900;color:#6B7280;font-size:12px;}
+.sija-roadmap-timeline-skills,.sija-roadmap-timeline-targets{margin-top:10px;display:flex;flex-wrap:wrap;gap:10px;}
+.sija-roadmap-timeline-skills span,.sija-roadmap-timeline-targets span{border:1px solid rgba(37,99,235,0.22);background:rgba(37,99,235,0.08);color:var(--sija-blue);border-radius:999px;padding:8px 10px;font-weight:1000;font-size:12px;}
+.sija-roadmap-timeline-item.is-locked .sija-roadmap-timeline-skills span,
+.sija-roadmap-timeline-item.is-locked .sija-roadmap-timeline-targets span{background:#fff;color:#111827;border-color:rgba(15,23,42,0.12);opacity:0.8;}
+
+.sija-roadmap-timeline-progress{margin-top:12px;width:100%;}
+.sija-roadmap-timeline-progress-row{display:flex;align-items:center;justify-content:space-between;font-weight:950;color:#0F172A;font-size:12px;margin-bottom:8px;}
+.sija-roadmap-timeline-progressbar{height:10px;background:rgba(37,99,235,0.10);border-radius:999px;overflow:hidden;}
+.sija-roadmap-timeline-progressbar-fill{height:100%;background:var(--sija-blue);border-radius:999px;}
+
+/* Skill progress */
+.sija-roadmap-skill-progress{display:flex;flex-direction:column;gap:12px;}
+.sija-roadmap-skill-row{}
+.sija-roadmap-skill-top{display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:950;color:#0F172A;font-size:13px;margin-bottom:8px;}
+.sija-roadmap-skillbar{height:10px;background:rgba(37,99,235,0.10);border-radius:999px;overflow:hidden;}
+.sija-roadmap-skillbar-fill{height:100%;background:var(--sija-blue);border-radius:999px;}
+
+/* AI skills */
+.sija-roadmap-ai-skill-grid{display:flex;flex-direction:column;gap:10px;}
+.sija-roadmap-ai-skill-item{border:1px solid rgba(15,23,42,0.10);border-radius:16px;background:#fff;padding:12px;}
+.sija-roadmap-ai-skill-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.sija-roadmap-ai-skill-name{font-weight:1000;color:#0F172A;font-size:14px;}
+.sija-roadmap-ai-skill-priority{color:var(--sija-blue);font-weight:1000;font-size:12px;border:1px solid rgba(37,99,235,0.22);background:rgba(37,99,235,0.08);padding:7px 10px;border-radius:999px;}
+.sija-roadmap-ai-skill-meta{margin-top:10px;display:flex;flex-direction:column;gap:8px;color:#6B7280;font-weight:850;font-size:12px;}
+.sija-roadmap-ai-k{color:#6B7280;font-weight:900;}
+
+/* Simulation */
+.sija-roadmap-sim-reco{display:flex;flex-direction:column;gap:14px;}
+.sija-roadmap-sim-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.sija-roadmap-sim-title{font-weight:1000;color:#0F172A;font-size:14px;}
+.sija-roadmap-sim-sub{margin-top:6px;color:#6B7280;font-weight:850;font-size:12px;}
+.sija-roadmap-sim-badge{display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:rgba(37,99,235,0.08);border:1px solid rgba(37,99,235,0.22);padding:9px 12px;font-weight:1000;color:var(--sija-blue);font-size:12px;}
+.sija-roadmap-sim-badge-icon{width:18px;height:18px;color:var(--sija-blue);}
+.sija-roadmap-sim-actions{display:flex;}
+
+/* Mentor */
+.sija-roadmap-mentor-card{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.sija-roadmap-mentor-left{display:flex;align-items:flex-start;gap:12px;}
+.sija-roadmap-mentor-photo{width:46px;height:46px;border-radius:16px;background:rgba(37,99,235,0.10);border:1px solid rgba(37,99,235,0.20);display:flex;align-items:center;justify-content:center;font-weight:1000;color:var(--sija-blue);}
+.sija-roadmap-mentor-name{font-weight:1000;color:#0F172A;font-size:14px;}
+.sija-roadmap-mentor-profesi{margin-top:6px;color:#6B7280;font-weight:850;font-size:12px;line-height:1.4;}
+.sija-roadmap-mentor-right{text-align:right;}
+.sija-roadmap-mentor-rating{display:flex;align-items:center;justify-content:flex-end;gap:8px;font-weight:1000;color:#0F172A;}
+.sija-roadmap-mentor-star{width:18px;height:18px;color:var(--sija-blue);}
+.sija-roadmap-mentor-rating-sub{color:#6B7280;font-weight:900;font-size:12px;}
+.sija-roadmap-mentor-match{margin-top:8px;color:#6B7280;font-weight:900;font-size:12px;}
+.sija-roadmap-mentor-actions{margin-top:12px;}
+
+/* Bottom */
+.sija-roadmap-bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;}
+
+/* Ladder */
+.sija-roadmap-ladder-row{display:flex;flex-direction:column;gap:12px;}
+.sija-roadmap-ladder-card{border:1px solid rgba(15,23,42,0.10);border-radius:16px;background:#fff;padding:12px;}
+.sija-roadmap-ladder-title{font-weight:1000;color:#0F172A;font-size:14px;}
+.sija-roadmap-ladder-sub{margin-top:6px;color:#6B7280;font-weight:850;font-size:12px;}
+.sija-roadmap-ladder-detail{margin-top:8px;color:#111827;font-weight:900;font-size:12px;display:flex;align-items:flex-start;gap:10px;line-height:1.5;}
+.sija-roadmap-ladder-icon{width:16px;height:16px;color:var(--sija-blue);margin-top:1px;}
+.sija-roadmap-ladder-arrow{display:none;}
+
+/* Checklist */
+.sija-roadmap-checklist{list-style:none;padding:0;margin:12px 0 0 0;display:flex;flex-direction:column;gap:10px;}
+.sija-roadmap-checklist li{display:flex;align-items:center;gap:10px;font-weight:950;color:#0F172A;font-size:13px;}
+.sija-roadmap-check-icon{width:18px;height:18px;color:var(--sija-blue);}
+.sija-roadmap-checklist li.is-done{color:#0F172A;}
+.sija-roadmap-checklist li.is-todo{color:#6B7280;}
+.sija-roadmap-checklist li.is-todo .sija-roadmap-check-icon{color:#94A3B8;}
+
+/* Insight */
+.sija-roadmap-insight{margin-top:10px;}
+.sija-roadmap-insight-bar{height:10px;background:rgba(37,99,235,0.10);border-radius:999px;overflow:hidden;}
+.sija-roadmap-insight-bar-fill{height:100%;background:var(--sija-blue);border-radius:999px;}
+.sija-roadmap-insight-text{margin-top:12px;color:#4B5563;font-weight:850;font-size:13px;line-height:1.75;}
+
+/* CTA */
+.sija-roadmap-cta{grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.sija-roadmap-cta-title{font-weight:1000;color:#0F172A;font-size:18px;letter-spacing:-0.01em;}
+.sija-roadmap-cta-desc{margin-top:8px;color:#6B7280;font-weight:850;font-size:13px;line-height:1.6;}
+.sija-roadmap-cta-actions{display:flex;gap:12px;}
+.sija-roadmap-cta-actions .sija-btn{min-width:210px;}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .sija-roadmap-reco-badge{min-width:160px;}
+  .sija-roadmap-hero-inner{flex-direction:column;}
+  .sija-roadmap-hero-cta{min-width:0;width:100%;}
+  .sija-roadmap-two-col{grid-template-columns:1fr;}
+  .sija-roadmap-bottom-grid{grid-template-columns:1fr;}
+  .sija-roadmap-cta{flex-direction:column;align-items:flex-start;}
+  .sija-roadmap-cta-actions{width:100%;}
+  .sija-roadmap-cta-actions .sija-btn{flex:1;min-width:0;}
+}
+
+@media (max-width: 600px){
+  .sija-roadmap-hero-meta{grid-template-columns:1fr;}
+  .sija-roadmap-reco-top{flex-direction:column;}
+  .sija-roadmap-reco-bottom{flex-direction:column;align-items:flex-start;}
+  .sija-roadmap-reco-actions{width:100%;}
+  .sija-roadmap-mentor-card{flex-direction:column;}
+  .sija-roadmap-mentor-right{text-align:left;}
+  .sija-roadmap-cta-actions{flex-direction:column;}
+  .sija-roadmap-cta-actions .sija-btn{width:100%;}
+}
+

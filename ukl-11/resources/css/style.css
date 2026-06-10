@@ -896,6 +896,274 @@ nav a:hover {
     }
 }
 
+
+/* ===== SIJA Jelajahi Profesi (Page Specific) ===== */
+
+/* Modal (dipakai oleh jelajahi-profesi_new) */
+.sija-modal{position:fixed;inset:0;display:none;z-index:50;}
+.sija-modal.is-open{display:block;}
+.sija-modal-overlay{position:absolute;inset:0;background:rgba(15,23,42,0.45);backdrop-filter:blur(6px);}
+.sija-modal-panel{position:relative;margin:32px auto;max-width:980px;width:calc(100% - 24px);background:#fff;border:1px solid rgba(15,23,42,0.10);border-radius:18px;box-shadow:0 30px 80px rgba(15,23,42,0.25);padding:18px;}
+.sija-modal-close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:14px;border:1px solid rgba(15,23,42,0.10);background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+.sija-modal-close:hover{background:rgba(37,99,235,0.06);}
+.sija-modal-close-icon{width:18px;height:18px;color:#0F172A;}
+
+.sija-modal-header{display:flex;align-items:flex-start;gap:12px;padding-right:60px;}
+.sija-modal-icon{width:46px;height:46px;border-radius:16px;background:rgba(37,99,235,0.10);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.sija-modal-icon-lucide{width:22px;height:22px;color:var(--sija-blue);}
+.sija-modal-title{font-weight:1000;color:#0F172A;font-size:18px;line-height:1.2;}
+.sija-modal-sub{margin-top:6px;color:#6B7280;font-weight:850;font-size:13px;}
+.sija-modal-badges{display:flex;align-items:center;gap:10px;margin-left:auto;}
+.sija-tag{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(37,99,235,0.10);color:var(--sija-blue);font-weight:850;font-size:13px;}
+
+.sija-modal-body{margin-top:14px;}
+.sija-modal-two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.sija-modal-section-title{font-weight:1000;color:#0F172A;font-size:14px;margin-bottom:8px;}
+.sija-modal-paragraph{color:#4B5563;font-weight:750;font-size:13px;line-height:1.75;}
+.sija-modal-list{margin-top:8px;display:flex;flex-direction:column;gap:8px;padding-left:18px;}
+.sija-modal-list li{color:#111827;font-weight:750;font-size:13px;}
+
+/* Skill progress (dipakai oleh data skill progress) */
+#modal-skill-progress{display:flex;flex-direction:column;gap:12px;}
+.sija-skill-prog-item{background:rgba(37,99,235,0.03);border:1px solid rgba(37,99,235,0.10);border-radius:14px;padding:12px;}
+.sija-skill-prog-top{display:flex;align-items:center;justify-content:space-between;font-weight:950;color:#0F172A;font-size:13px;}
+.sija-skill-prog-bar{height:10px;background:rgba(37,99,235,0.10);border-radius:999px;overflow:hidden;margin-top:8px;}
+.sija-skill-prog-fill{height:100%;width:var(--w,0%);background:var(--sija-blue);border-radius:999px;}
+
+.sija-career{padding-left:18px;display:flex;flex-direction:column;gap:10px;}
+.sija-career li{font-weight:950;color:#0F172A;font-size:14px;}
+.sija-career-arrow{color:var(--sija-blue);font-weight:1000;margin-left:8px;}
+
+.sija-modal-skill-badges{display:flex;flex-wrap:wrap;gap:10px;}
+.sija-modal-actions{margin-top:14px;}
+.sija-modal-note{margin-top:10px;border:1px dashed rgba(37,99,235,0.25);background:rgba(37,99,235,0.04);border-radius:14px;padding:10px 12px;color:#4B5563;font-weight:800;font-size:13px;line-height:1.6;}
+
+/* Popular list */
+.sija-popular-item{border:1px solid var(--sija-border);border-radius:14px;background:#fff;padding:14px;box-shadow:0 10px 25px rgba(15,23,42,0.05);display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:12px;}
+.sija-popular-list{display:flex;flex-direction:column;}
+.sija-popular-left{display:flex;align-items:center;gap:12px;}
+.sija-popular-icon{width:46px;height:46px;border-radius:16px;background:rgba(37,99,235,0.10);display:flex;align-items:center;justify-content:center;color:var(--sija-blue);}
+.sija-popular-title{font-weight:1000;color:#0F172A;font-size:14px;}
+.sija-popular-sub{margin-top:6px;color:#6B7280;font-weight:800;font-size:13px;}
+.sija-popular-users{font-weight:1000;color:#2563EB;font-size:13px;white-space:nowrap;}
+
+/* Insight */
+.sija-insight-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px;}
+.sija-insight-item{border:1px solid var(--sija-border);border-radius:14px;background:#fff;box-shadow:0 10px 25px rgba(15,23,42,0.05);padding:14px;}
+.sija-insight-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;}
+.sija-insight-title{font-weight:1000;color:#0F172A;font-size:14px;}
+.sija-insight-up{font-weight:1000;color:#2563EB;font-size:14px;}
+.sija-insight-bar{height:10px;background:rgba(37,99,235,0.10);border-radius:999px;overflow:hidden;margin-top:10px;}
+.sija-insight-fill{height:100%;background:var(--sija-blue);border-radius:999px;}
+.sija-insight-sub{margin-top:10px;color:#6B7280;font-weight:850;font-size:13px;line-height:1.5;}
+.sija-insight-btn{margin-top:12px;width:100%;}
+
+@media (max-width: 900px){
+  .sija-modal-two-col{grid-template-columns:1fr;}
+  .sija-insight-grid{grid-template-columns:1fr;}
+}
+
+.sija-profesi-hero{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:18px;
+}
+
+
+.sija-profesi-hero .sija-lead{
+    margin-top:10px;
+    max-width:820px;
+}
+
+.sija-profesi-card{
+    padding:20px;
+}
+
+.sija-profesi-search{
+    margin-top:12px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.sija-profesi-searchbox{
+    border:1px solid var(--sija-border);
+    border-radius:var(--sija-radius);
+    padding:12px 14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#fff;
+}
+
+.sija-profesi-searchbox .sija-search-icon{
+    width:18px;
+    height:18px;
+    color:#6B7280;
+}
+
+.sija-profesi-searchbox input{
+    border:none;
+    outline:none;
+    width:100%;
+    font-weight:800;
+    color:#111827;
+    background:transparent;
+}
+
+.sija-profesi-searchbox input::placeholder{
+    color:#94A3B8;
+    font-weight:700;
+}
+
+.sija-profesi-filters{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.sija-field{display:flex;flex-direction:column;gap:6px;}
+
+.sija-label{font-weight:950;color:#0F172A;font-size:13px;}
+
+.sija-select{
+    height:48px;
+    border-radius:14px;
+    border:1px solid var(--sija-border);
+    background:#fff;
+    padding:0 12px;
+    font-weight:900;
+    color:#111827;
+    outline:none;
+}
+
+.sija-select:focus{box-shadow:0 0 0 4px rgba(37,99,235,0.15);border-color:rgba(37,99,235,0.45);}
+
+.sija-profesi-stat-grid{
+    display:grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap:14px;
+    margin-top:12px;
+}
+
+.sija-stat-card{
+    border:1px solid var(--sija-border);
+    border-radius:var(--sija-radius);
+    background:#fff;
+    box-shadow:0 10px 25px rgba(15,23,42,0.05);
+    padding:16px;
+}
+
+.sija-stat-top{display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.sija-stat-label{color:#6B7280;font-weight:850;font-size:13px;}
+.sija-stat-value{margin-top:10px;font-weight:1000;font-size:26px;letter-spacing:-0.02em;color:#0F172A;}
+.sija-stat-icon{width:46px;height:46px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:rgba(37,99,235,0.10);}
+.sija-stat-lucide{width:22px;height:22px;color:var(--sija-blue);}
+
+.sija-profesi-grid{
+    margin-top:14px;
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:14px;
+}
+
+.sija-profesi-carditem{
+    border:1px solid var(--sija-border);
+    border-radius:var(--sija-radius);
+    background:#fff;
+    padding:16px;
+    box-shadow:0 10px 25px rgba(15,23,42,0.05);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    min-height:260px;
+}
+
+.sija-profesi-card-top{display:flex;align-items:flex-start;gap:12px;}
+.sija-profesi-icon{width:46px;height:46px;border-radius:16px;background:rgba(37,99,235,0.10);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.sija-profesi-icon-lucide{width:22px;height:22px;color:var(--sija-blue);}
+.sija-profesi-title{font-weight:1000;color:#0F172A;font-size:15px;line-height:1.3;}
+.sija-profesi-sub{margin-top:6px;color:#6B7280;font-weight:800;font-size:12px;}
+.sija-profesi-desc{color:#4B5563;font-weight:750;font-size:13px;line-height:1.65;}
+.sija-profesi-skill-label{font-weight:1000;color:#0F172A;font-size:13px;}
+.sija-profesi-skill-line{margin-top:8px;color:#111827;font-weight:850;font-size:13px;}
+.sija-profesi-actions{display:flex;gap:12px;margin-top:auto;}
+.sija-profesi-actions .sija-btn{flex:1;}
+
+.sija-future-grid{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:14px;
+    margin-top:14px;
+}
+
+.sija-future-card{
+    border:1px solid var(--sija-border);
+    border-radius:var(--sija-radius);
+    background:#fff;
+    padding:16px;
+    box-shadow:0 10px 25px rgba(15,23,42,0.05);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    min-height:250px;
+}
+
+.sija-future-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.sija-future-badge{
+    font-weight:1000;
+    background:rgba(37,99,235,0.10);
+    color:var(--sija-blue);
+    border:1px solid rgba(37,99,235,0.22);
+    padding:7px 10px;
+    border-radius:999px;
+    font-size:12px;
+}
+.sija-future-icon{width:46px;height:46px;border-radius:16px;background:rgba(37,99,235,0.10);display:flex;align-items:center;justify-content:center;}
+.sija-future-lucide{width:22px;height:22px;color:var(--sija-blue);}
+.sija-future-title{font-weight:1000;color:#0F172A;font-size:15px;}
+.sija-future-tag{color:#6B7280;font-weight:850;font-size:12px;}
+.sija-future-preview{border-radius:14px;border:1px dashed rgba(37,99,235,0.25);padding:10px 12px;margin-top:2px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.sija-preview-line{width:26px;height:26px;border-radius:12px;background:rgba(37,99,235,0.12);}
+.sija-preview-text{font-weight:1000;color:var(--sija-blue);font-size:12px;}
+.sija-future-actions{display:flex;gap:12px;margin-top:auto;}
+.sija-future-actions .sija-btn{flex:1;}
+
+.sija-steps{list-style:none;padding:0;margin-top:12px;display:flex;flex-direction:column;gap:14px;}
+.sija-step{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--sija-border);border-radius:var(--sija-radius);background:#fff;padding:14px;box-shadow:0 10px 25px rgba(15,23,42,0.05);}
+.sija-step-num{width:44px;height:44px;border-radius:16px;background:rgba(37,99,235,0.10);border:1px solid rgba(37,99,235,0.22);display:flex;align-items:center;justify-content:center;font-weight:1000;color:var(--sija-blue);}
+.sija-step-title{font-weight:1000;color:#0F172A;font-size:14px;}
+.sija-step-sub{margin-top:6px;color:#6B7280;font-weight:800;font-size:12px;line-height:1.6;}
+
+.sija-skill-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
+.sija-skill-badge{border:1px solid rgba(37,99,235,0.22);background:rgba(37,99,235,0.10);color:var(--sija-blue);border-radius:999px;padding:9px 12px;font-weight:1000;font-size:12px;}
+
+.sija-profesi-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;}
+.sija-cta-title{font-weight:1000;color:#0F172A;font-size:18px;letter-spacing:-0.01em;}
+.sija-cta-desc{margin-top:8px;color:#6B7280;font-weight:800;font-size:13px;line-height:1.7;}
+.sija-cta-actions{display:flex;gap:12px;}
+.sija-cta-actions .sija-btn{min-width:200px;}
+
+@media (max-width: 1100px){
+  .sija-profesi-grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
+  .sija-future-grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
+  .sija-profesi-stat-grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
+  .sija-profesi-cta-inner{flex-direction:column;align-items:flex-start;}
+  .sija-cta-actions{width:100%;}
+  .sija-cta-actions .sija-btn{flex:1;min-width:0;width:100%;}
+}
+
+@media (max-width: 900px){
+  .sija-profesi-filters{grid-template-columns:1fr;}
+}
+
+@media (max-width: 480px){
+  .sija-profesi-grid{grid-template-columns:1fr;}
+  .sija-future-grid{grid-template-columns:1fr;}
+  .sija-profesi-stat-grid{grid-template-columns:1fr 1fr;}
+}
+
 /* ===== Auth Pages (Login/Register) ===== */
 
 .auth-page {
@@ -935,7 +1203,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 
 /* ===== SIJA User Dashboard ===== */
-
 :root{
     --sija-blue:#2563EB;
     --sija-text:#0B1220;
@@ -945,6 +1212,12 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     --sija-border:rgba(15, 23, 42, 0.10);
     --sija-shadow:0 10px 30px rgba(15,23,42,0.08);
     --sija-radius:16px;
+}
+
+.sija-dashboard{
+    min-height:100vh;
+    display:flex;
+    background:#fff;
 }
 
 body{
@@ -957,12 +1230,6 @@ body, body *{
     color:#000000;
 }
 
-
-.sija-dashboard{
-    min-height:100vh;
-    display:flex;
-    background:#fff;
-}
 
 
 .sija-sidebar{
@@ -1153,8 +1420,103 @@ body, body *{
   .sija-active-progress{min-width:0;flex:1;}
 }
 
+/* ===== SIJA Simulasi Saya (Page Specific) ===== */
+.sija-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+@media (max-width: 900px){
+  .sija-grid-3{grid-template-columns:1fr;}
+}
+
+.sija-sim-card{border:1px solid var(--sija-border);border-radius:16px;background:#fff;padding:16px;display:flex;flex-direction:column;gap:12px;min-height:270px;}
+.sija-sim-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.sija-sim-title{font-weight:1000;color:#0F172A;font-size:15px;line-height:1.25;}
+.sija-sim-meta{margin-top:6px;color:#6B7280;font-weight:850;font-size:12px;}
+.sija-sim-badge{display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:rgba(37,99,235,0.10);border:1px solid rgba(37,99,235,0.22);padding:7px 10px;font-weight:1000;color:var(--sija-blue);font-size:12px;width:max-content;}
+.sija-sim-badge-icon{width:18px;height:18px;color:var(--sija-blue);}
+.sija-sim-progress-row{display:flex;align-items:center;justify-content:space-between;font-weight:950;color:#0F172A;font-size:13px;}
+.sija-sim-progressbar{height:10px;background:rgba(37,99,235,0.10);border-radius:999px;overflow:hidden;}
+.sija-sim-progressbar-fill{height:100%;background:var(--sija-blue);border-radius:999px;}
+.sija-sim-body{display:flex;flex-direction:column;gap:10px;margin-top:auto;}
+.sija-sim-line{display:flex;flex-direction:column;gap:6px;}
+.sija-sim-line-label{color:#6B7280;font-weight:900;font-size:12px;}
+.sija-sim-line-value{color:#0F172A;font-weight:1000;font-size:14px;line-height:1.3;}
+.sija-sim-actions{margin-top:12px;}
+.sija-inline-icon{width:18px;height:18px;margin-right:8px;vertical-align:-4px;}
+
+.sija-section{margin-top:16px;}
+
+.sija-path{padding:12px 0 4px;}
+.sija-path-title{font-weight:1000;color:#0F172A;font-size:14px;margin-bottom:10px;}
+.sija-path-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.sija-path-item{display:flex;align-items:center;gap:12px;border:1px solid var(--sija-border);border-radius:14px;padding:12px 12px;background:#fff;}
+.sija-path-icon{width:34px;height:34px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:16px;background:rgba(37,99,235,0.10);border:1px solid rgba(37,99,235,0.22);}
+.sija-path-text{font-weight:1000;color:#0F172A;font-size:13px;line-height:1.4;}
+.sija-path-item.is-done .sija-path-icon{background:rgba(37,99,235,0.10);}
+.sija-path-item.is-current .sija-path-icon{background:rgba(37,99,235,0.14);border-color:rgba(37,99,235,0.32);}
+.sija-path-item.is-pending .sija-path-icon{background:rgba(245,158,11,0.10);border-color:rgba(245,158,11,0.25);}
+.sija-path-item.is-lock .sija-path-icon{background:rgba(15,23,42,0.04);border-color:rgba(15,23,42,0.12);color:#111827;}
+
+.sija-task-card{border:1px solid var(--sija-border);border-radius:16px;background:#fff;padding:16px;}
+.sija-task-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.sija-task-label{color:#6B7280;font-weight:950;font-size:12px;}
+.sija-task-title{margin-top:6px;font-weight:1000;color:#0F172A;font-size:16px;line-height:1.3;}
+.sija-task-icon-pill{width:46px;height:46px;border-radius:16px;background:rgba(37,99,235,0.10);display:flex;align-items:center;justify-content:center;}
+.sija-task-icon{width:22px;height:22px;color:var(--sija-blue);}
+.sija-task-desc{margin-top:12px;color:#4B5563;font-weight:800;font-size:13px;line-height:1.7;}
+.sija-task-deadline{margin-top:12px;padding:12px;border-radius:14px;background:rgba(37,99,235,0.04);border:1px solid rgba(37,99,235,0.10);display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.sija-task-deadline-label{color:#6B7280;font-weight:900;font-size:12px;}
+.sija-task-deadline-value{color:#0F172A;font-weight:1000;font-size:14px;}
+.sija-task-files{margin-top:12px;display:flex;flex-direction:column;gap:8px;}
+.sija-task-files-label{color:#6B7280;font-weight:950;font-size:12px;}
+.sija-link-pill{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(37,99,235,0.22);background:rgba(37,99,235,0.08);color:var(--sija-blue);font-weight:1000;border-radius:999px;padding:9px 12px;width:max-content;}
+.sija-task-actions{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap;}
+.sija-task-actions .sija-btn{flex:1;min-width:180px;}
+.sija-note{margin-top:12px;color:#6B7280;font-weight:850;font-size:12px;line-height:1.6;border-top:1px dashed rgba(15,23,42,0.12);padding-top:12px;}
+
+.sija-feedback-card{border:1px solid var(--sija-border);border-radius:16px;background:#fff;padding:16px;}
+.sija-feedback-top{display:flex;align-items:flex-start;gap:12px;}
+.sija-feedback-avatar{width:46px;height:46px;border-radius:16px;background:rgba(37,99,235,0.10);display:flex;align-items:center;justify-content:center;font-weight:1000;color:var(--sija-blue);}
+.sija-feedback-mentor{color:#0F172A;font-weight:1000;font-size:14px;}
+.sija-feedback-sub{margin-top:6px;color:#6B7280;font-weight:900;font-size:12px;}
+.sija-feedback-text{margin-top:12px;color:#4B5563;font-weight:850;font-size:13px;line-height:1.75;}
+.sija-feedback-actions{margin-top:14px;}
+
+.sija-skill-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
+.sija-skill-badge{border:1px solid rgba(37,99,235,0.22);background:rgba(37,99,235,0.10);color:var(--sija-blue);border-radius:999px;padding:10px 12px;font-weight:1000;font-size:12px;}
+
+.sija-table-wrap{margin-top:8px;}
+.sija-table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:16px;border:1px solid var(--sija-border);background:#fff;}
+.sija-table thead th{background:rgba(37,99,235,0.06);color:#0F172A;font-weight:1000;font-size:13px;text-align:left;padding:12px;}
+.sija-table tbody td{padding:12px;border-top:1px solid rgba(15,23,42,0.06);color:#111827;font-weight:850;font-size:13px;}
+.sija-status{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;font-weight:1000;font-size:12px;}
+.sija-status.is-done{background:rgba(37,99,235,0.10);border:1px solid rgba(37,99,235,0.22);color:var(--sija-blue);}
+.sija-status.is-active{background:rgba(245,158,11,0.10);border:1px solid rgba(245,158,11,0.25);color:#B45309;}
+.sija-table-action{color:var(--sija-blue);font-weight:1000;border:1px solid rgba(37,99,235,0.22);padding:8px 12px;border-radius:999px;background:rgba(37,99,235,0.08);}
+.sija-table-muted{color:#6B7280;font-weight:1000;}
+
+.sija-cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
+@media (max-width: 900px){.sija-cert-grid{grid-template-columns:1fr;}}
+.sija-cert-card{border:1px solid var(--sija-border);border-radius:16px;background:#fff;padding:16px;}
+.sija-cert-top{display:flex;align-items:flex-start;gap:12px;}
+.sija-cert-emoji{width:46px;height:46px;border-radius:16px;background:rgba(37,99,235,0.10);display:flex;align-items:center;justify-content:center;font-size:20px;}
+.sija-cert-title{font-weight:1000;color:#0F172A;font-size:14px;line-height:1.3;}
+.sija-cert-sub{margin-top:6px;color:#6B7280;font-weight:900;font-size:12px;}
+.sija-cert-bar{margin-top:12px;height:10px;background:rgba(37,99,235,0.10);border-radius:999px;overflow:hidden;}
+.sija-cert-bar-fill{height:100%;background:var(--sija-blue);border-radius:999px;}
+
+.sija-activity{list-style:none;margin:12px 0 0 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+.sija-activity-item{display:flex;gap:12px;align-items:flex-start;border:1px solid rgba(15,23,42,0.06);border-radius:14px;background:#fff;padding:12px;}
+.sija-activity-dot{width:12px;height:12px;border-radius:50%;background:rgba(37,99,235,0.65);margin-top:6px;}
+.sija-activity-title{font-weight:1000;color:#0F172A;font-size:13px;line-height:1.4;}
+.sija-activity-sub{margin-top:6px;color:#6B7280;font-weight:850;font-size:12px;line-height:1.6;}
+.sija-avoid{margin-top:16px;border:1px dashed rgba(37,99,235,0.25);background:rgba(37,99,235,0.04);border-radius:16px;padding:14px;}
+.sija-avoid-title{font-weight:1000;color:#0F172A;font-size:14px;}
+.sija-avoid-list{margin-top:10px;display:flex;flex-direction:column;gap:6px;padding-left:18px;}
+.sija-avoid-list li{color:#4B5563;font-weight:900;font-size:13px;line-height:1.6;}
+.sija-avoid-note{margin-top:10px;color:#6B7280;font-weight:850;font-size:12px;line-height:1.6;}
+
 
 .auth-container {
+
     width: 100%;
     max-width: 480px;
     background: rgba(212, 212, 212, 0.65);
